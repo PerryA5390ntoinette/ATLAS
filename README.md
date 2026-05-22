@@ -55,7 +55,9 @@ All configuration is handled via environment variables. See [`.env.example`](.en
 | `OPENAI_API_KEY` | OpenAI API key | *(optional)* |
 | `ANTHROPIC_API_KEY` | Anthropic API key | *(optional)* |
 | `OLLAMA_BASE_URL` | Ollama server URL | `http://localhost:11434` |
-| `PORT` | Application port | `3000` |
+| `PORT` | Application port | `8080` |
+
+> **Personal note:** I changed the default port to `8080` since port `3000` conflicts with another service I run locally.
 
 ## Development
 
