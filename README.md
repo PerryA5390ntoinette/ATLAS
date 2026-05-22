@@ -124,3 +124,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Original project by [itigges22](https://github.com/itigges22/ATLAS)
 - Inspired by the open-source AI community
+
+## Personal Notes
+
+> These are reminders for my own setup and won't apply to everyone.
+
+- After cloning, run `chmod +x docker/entrypoint.sh` — the entrypoint script loses its execute bit on my machine for some reason.
+- I use a local Postgres instance instead of SQLite; set `DATABASE_URL=postgresql://user:pass@localhost:5432/atlas` in `.env`.
