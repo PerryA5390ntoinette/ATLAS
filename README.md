@@ -129,5 +129,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 > These are reminders for my own setup and won't apply to everyone.
 
-- After cloning, run `chmod +x docker/entrypoint.sh` — the entrypoint script loses its execute bit on my machine for some reason.
-- I use a local Postgres instance instead of SQLite; set `DATABASE_URL=postgresql://user:pass@localhost:5432/atlas` in `.env`.
+- After cloning, run `chmod +x docker/entrypoint.sh` if the entrypoint script loses its executable bit on Windows.
+- I keep my `.env` file backed up (encrypted) in a private repo — don't commit it directly.
+- My local Ollama instance runs on port `11435` instead of the default, so I set `OLLAMA_BASE_URL=http://localhost:11435` in my `.env`.
