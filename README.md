@@ -40,7 +40,7 @@ nano .env
 docker-compose up -d
 ```
 
-ATLAS will be available at `http://localhost:3000`
+ATLAS will be available at `http://localhost:8080`
 
 ## Configuration
 
