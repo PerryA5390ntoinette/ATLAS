@@ -37,7 +37,8 @@ def create_app(config_name: str = None) -> Flask:
         DATABASE_URL=os.getenv("DATABASE_URL", "sqlite:///atlas.db"),
         DEBUG=env == "development",
         TESTING=env == "testing",
-        LOG_LEVEL=os.getenv("LOG_LEVEL", "INFO"),
+        # Changed default log level to DEBUG for easier local development tracing
+        LOG_LEVEL=os.getenv("LOG_LEVEL", "DEBUG"),
         MAX_CONTENT_LENGTH=int(os.getenv("MAX_CONTENT_LENGTH", 16 * 1024 * 1024)),
     )
 
@@ -92,7 +93,7 @@ def _configure_logging(app: Flask) -> None:
     """
     import logging
 
-    log_level = getattr(logging, app.config.get("LOG_LEVEL", "INFO").upper(), logging.INFO)
+    log_level = getattr(logging, app.config.get("LOG_LEVEL", "DEBUG").upper(), logging.DEBUG)
 
     logging.basicConfig(
         level=log_level,
@@ -100,4 +101,4 @@ def _configure_logging(app: Flask) -> None:
         datefmt="%Y-%m-%d %H:%M:%S",
     )
 
-    app.logger.setLevel(log_level)
+   
